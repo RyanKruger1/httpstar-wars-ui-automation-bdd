@@ -31,7 +31,6 @@ public class BaseTest extends Core {
     public RemoteWebDriver setUp(String browser) throws IOException {
         switch (browser) {
             case "chrome":
-                WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
                 options.addArguments("--headless");
