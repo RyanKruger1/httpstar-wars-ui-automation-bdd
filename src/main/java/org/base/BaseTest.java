@@ -34,6 +34,7 @@ public class BaseTest extends Core {
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
+                options.addArguments("--headless");
                 driver = new ChromeDriver(options);
                 break;
             case "firefox":
