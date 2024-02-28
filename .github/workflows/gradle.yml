@@ -46,7 +46,7 @@ jobs:
     
     steps:
     - name: Start star wars FE
-      run: pm2 start yarn --interpreter bash --name star-wars-ui -- start
+      run: yarn start &
       
     - name: Checkout code
       uses: actions/checkout@v2
