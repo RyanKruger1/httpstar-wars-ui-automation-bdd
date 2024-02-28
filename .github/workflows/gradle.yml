@@ -25,11 +25,17 @@ jobs:
       with:
         repository: MindfulMichaelJames/star-wars
         ref: main
-        
-    - name: "Install Chrome"
+    - name: Chrome
       run: |
-       chmod +x ./scripts/InstallChrome.sh
-        ./scripts/InstallChrome.sh
+          CHROME_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
+          wget -q --continue -O /tmp/chromedriver_linux64.zip "https://chromedriver.storage.googleapis.com/${CHROME_VERSION}/chromedriver_linux64.zip"
+          unzip /tmp/chromedriver_linux64.zip -d /tmp
+          mv /tmp/chromedriver /usr/local/bin/chromedriver
+          chmod +x /usr/local/bin/chromedriver
+          wget -q --continue -O /tmp/google-chrome-stable_current_amd64.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+          sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb
+          sudo apt-get install -f
+      
     - name: Install dependencies
       run: yarn install
 
