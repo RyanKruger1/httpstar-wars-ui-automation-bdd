@@ -7,8 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
-
+  start-application:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -27,7 +26,6 @@ jobs:
         repository: MindfulMichaelJames/star-wars
         ref: main
 
-
     - name: Install pm2
       run: npm install pm2 -g
 
@@ -37,14 +35,26 @@ jobs:
     - name: Install dependencies
       run: yarn install
 
-    - name: Build application
+    - name: Build start wars application
       run: yarn build
 
-    - name: Build application
-      run: pm2 start yarn --interpreter bash --name application -- start
+    - name: Start star wars FE
+      run: pm2 start yarn --interpreter bash --name star-wars-ui -- start
+      
+  test-application:
+    name: Run Gradle Tests
+    needs: start-application  
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
       
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+
+    - name: Grant execute permissions to gradlew
+      run: chmod +x ./gradlew
    
     - name: Build with Gradle Wrapper
       run: ./gradlew runCucumberTests
