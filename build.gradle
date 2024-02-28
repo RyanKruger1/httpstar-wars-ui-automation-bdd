@@ -15,7 +15,7 @@ configurations {
     }
 }
 
-task runCucumberTests() {
+    task runCucumberTests() {
     dependsOn assemble, compileTestJava
     doLast {
         javaexec {
@@ -28,7 +28,7 @@ task runCucumberTests() {
 
 dependencies {
     implementation group: 'org.testng', name: 'testng', version: '7.9.0'
-    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.6.3'
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.5.3'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.17.0'
     implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.15.0'
     implementation group: 'io.cucumber', name: 'cucumber-testng', version: '7.15.0'
