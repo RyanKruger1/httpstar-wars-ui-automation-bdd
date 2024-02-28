@@ -38,13 +38,6 @@ jobs:
     - name: Build start wars application
       run: yarn build
 
-    
-  test-application:
-    name: Run Gradle Tests
-    needs: start-application  
-    runs-on: ubuntu-latest
-    
-    steps:
     - name: Start star wars FE
       run: yarn start &
       
@@ -58,8 +51,8 @@ jobs:
       run: chmod +x ./gradlew
    
     - name: Build with Gradle Wrapper
-      run: ./gradlew runCucumberTests
-
+      run: ./gradlew runCucumberTests  
+    
   dependency-submission:
 
     runs-on: ubuntu-latest
