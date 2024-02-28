@@ -18,14 +18,18 @@ jobs:
       uses: actions/setup-java@v4
       with:
         java-version: '17'
-        distribution: 'temurin'
+        distribution: 'temurin'    
 
     - name: Checkout code
       uses: actions/checkout@v2
       with:
         repository: MindfulMichaelJames/star-wars
         ref: main
-
+        
+    - name: "Install Chrome"
+      run: |
+       chmod +x ./scripts/InstallChrome.sh
+        ./scripts/InstallChrome.sh
     - name: Install dependencies
       run: yarn install
 
