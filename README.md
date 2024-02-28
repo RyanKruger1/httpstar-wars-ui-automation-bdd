@@ -7,7 +7,7 @@ This repo consists of a Java framework using RestAssured.
 ## Requirements:
 
 - Java(JDK 11 or Higher)
-- Browser (Chrome , Firefox or Edge)
+- Browser (Chrome, Firefox, or Edge)
 - Yarn
 
 ## System under test
@@ -18,13 +18,13 @@ The SUT is (repo)[https://github.com/MindfulMichaelJames/star-wars/tree/main]
 
 ### Prerequisites
 
-This automation framework only uses Selenium in conjuction with TestNg & Cucumber
+This automation framework only uses Selenium in conjunction with TestNg & Cucumber
 The application is run from localhost:3000
-Instruction to run application can be foudn here: https://github.com/MindfulMichaelJames/star-wars/tree/main
+Instruction to run the application can be found here: https://github.com/MindfulMichaelJames/star-wars/tree/main
 
 ### Running
 
-The java framework uses gradle as the main building tool.
+The Java framework uses Gradle as the main building tool.
 
 On a Windows operating system, navigate to the root of the project in your file system via command line.
 Then run :
