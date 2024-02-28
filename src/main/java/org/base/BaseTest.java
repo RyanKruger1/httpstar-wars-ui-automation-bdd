@@ -33,7 +33,6 @@ public class BaseTest extends Core {
             case "chrome":
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
-                options.addArguments("--headless");
                 driver = new ChromeDriver(options);
                 break;
             case "firefox":
