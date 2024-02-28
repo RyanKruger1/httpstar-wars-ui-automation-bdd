@@ -38,15 +38,16 @@ jobs:
     - name: Build start wars application
       run: yarn build
 
-    - name: Start star wars FE
-      run: pm2 start yarn --interpreter bash --name star-wars-ui -- start
-      
+    
   test-application:
     name: Run Gradle Tests
     needs: start-application  
     runs-on: ubuntu-latest
     
     steps:
+    - name: Start star wars FE
+      run: pm2 start yarn --interpreter bash --name star-wars-ui -- start
+      
     - name: Checkout code
       uses: actions/checkout@v2
       
