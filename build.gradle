@@ -29,7 +29,7 @@ configurations {
 dependencies {
     implementation group: 'org.testng', name: 'testng', version: '7.9.0'
     implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.6.3'
-    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.17.0'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.18.1'
     implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.15.0'
     implementation group: 'io.cucumber', name: 'cucumber-testng', version: '7.15.0'
 }
