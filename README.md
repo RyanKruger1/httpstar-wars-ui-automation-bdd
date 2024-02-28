@@ -28,10 +28,10 @@ The Java framework uses Gradle as the main building tool.
 
 On a Windows operating system, navigate to the root of the project in your file system via command line.
 Then run :
-`gradlew cucumber clean test`
+`gradlew runCucumberTests`
 
 On Mac machine navigate to the repository via terminal. Run `chmod +x gradlew`, this will allow the gradlew file to become executable. To run the solution run command:
-`./gradlew cucumber clean test`
+`./gradlew runCucumberTests`
 
 ### Reporting
 
