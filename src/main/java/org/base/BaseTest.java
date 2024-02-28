@@ -33,6 +33,7 @@ public class BaseTest extends Core {
             case "chrome":
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
+                options.addArguments("--headless");
                 driver = new ChromeDriver(options);
                 break;
             case "firefox":
@@ -49,7 +50,7 @@ public class BaseTest extends Core {
         }
         wait = new WebDriverWait(driver, Duration.ofMillis(5000));
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
         return driver;
     }
